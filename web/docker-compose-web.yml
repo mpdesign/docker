@@ -1,0 +1,32 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:1.11.1
+    ports:
+      - "8080:80"
+    depends_on:
+      - php
+    volumes:
+      - $APP_ETC/nginx:/etc/nginx/conf.d
+      - $APP_WWW:/var/www
+  php:
+    build:
+      context: ../services/php
+      dockerfile: Dockerfile
+    volumes:
+      - $APP_ETC/php:/etc/php
+  mysql:
+    image: mariadb:10.1
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "123123"
+    volumes:
+      - $APP_MYSQL/log:/var/mysql/log
+      - $APP_ETC/mysql:/etc/mysql
+  redis:
+    image: redis:3.2.1
+    ports:
+      - "6379:6379"
+
