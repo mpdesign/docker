@@ -1,7 +1,7 @@
 version: '3'
 services:
   nginx:
-    image: nginx:1.11.1
+    image: nginx:1.12.2
     ports:
       - "8080:80"
     depends_on:
@@ -10,11 +10,14 @@ services:
       - $APP_ETC/nginx:/etc/nginx/conf.d
       - $APP_WWW:/var/www
   php:
+    image: php7
+    working_dir: /var/www
     build:
       context: ../services/php
       dockerfile: Dockerfile
     volumes:
       - $APP_ETC/php:/etc/php
+      - $APP_WWW:/var/www
   mysql:
     image: mariadb:10.1
     environment:
@@ -29,4 +32,3 @@ services:
     image: redis:3.2.1
     ports:
       - "6379:6379"
-
