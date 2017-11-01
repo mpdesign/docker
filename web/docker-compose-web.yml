@@ -3,21 +3,21 @@ services:
   nginx:
     image: nginx:1.12.2
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
       - php
     volumes:
-      - $APP_ETC/nginx:/etc/nginx/conf.d
-      - $APP_WWW:/var/www
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+      - /data:/data
   php:
-    image: php7
-    working_dir: /var/www
-    build:
-      context: ../services/php
-      dockerfile: Dockerfile
+    image: php-yaf:1.0
+    working_dir: /data
+    #build:
+    #  context: ../services/php
+    #  dockerfile: Dockerfile
     volumes:
-      - $APP_ETC/php:/etc/php
-      - $APP_WWW:/var/www
+      - ./etc/php:/etc/php
+      - /data:/data
   mysql:
     image: mariadb:10.1
     environment:
@@ -26,8 +26,10 @@ services:
       MYSQL_USER: "test"
       MYSQL_PASSWORD: "123123"
     volumes:
-      - $APP_MYSQL/log:/var/mysql/log
-      - $APP_ETC/mysql:/etc/mysql
+      - ./mysql/log:/var/mysql/log
+      - ./etc/mysql:/etc/mysql
+    ports:
+      - "3306:3306"
   redis:
     image: redis:3.2.1
     ports:

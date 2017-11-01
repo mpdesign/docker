@@ -30,10 +30,56 @@ git clone https://github.com/mpdesign/docker.git
 cd docker
 ```
 
+创建Dockfile镜像：
+
+* nginx
+
+```
+docker pull nginx:1.12.2 
+```
+
+* php-fpm
+
+```
+docker pull php:7.1.11-fpm
+```
+
+* php-yaf
+
+```
+docker build -t php-yaf ./services/php/
+```
+
+* mysql
+
+```
+docker pull mariadb:10.1
+```
+
+* redis
+
+```
+docker pull redis:3.2.1
+```
+
+创建docker-compose.yml
+
 基本用法：
+
+* 创建容器并启动，找不到镜像则远程拉取镜像
 
 ```
 docker-compose up -d
 ```
 
+* 进入容器修改php和nginx配置
 
+```
+docker-compose exec 容器名 bash
+```
+
+* 重启
+
+```
+docker-compose restart 容器名
+```

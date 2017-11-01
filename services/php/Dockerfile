@@ -17,7 +17,7 @@ RUN mkdir -p /usr/src/php/ext/redis \
     && echo 'redis' >> /usr/src/php-available-exts \
     && docker-php-ext-install redis
 
-RUN apt update && apt install -y wget unzip
+RUN apt update && apt install -y wget unzip vim
 
 RUN mkdir -p /usr/src/php/ext/yaf \
     && wget -P /usr/src/php/ext/yaf/ https://github.com/laruence/yaf/archive/master.zip  \
