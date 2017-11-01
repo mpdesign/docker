@@ -1,0 +1,35 @@
+2017/10/31 01:54:04 [notice] 1#1: using the "epoll" event method
+2017/10/31 01:54:04 [notice] 1#1: start worker processes
+2017/10/31 01:54:04 [notice] 1#1: start worker process 190
+2017/10/31 01:54:04 [notice] 1#1: signal 17 (SIGCHLD) received
+2017/10/31 01:54:04 [notice] 1#1: worker process 185 exited with code 0
+2017/10/31 01:54:04 [notice] 1#1: signal 29 (SIGIO) received
+2017/10/31 01:54:09 [error] 190#190: *16 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:56:51 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+2017/10/31 01:56:51 [notice] 190#190: exiting
+2017/10/31 01:56:51 [notice] 190#190: exit
+2017/10/31 01:56:51 [notice] 1#1: signal 14 (SIGALRM) received
+2017/10/31 01:56:51 [notice] 1#1: signal 17 (SIGCHLD) received
+2017/10/31 01:56:51 [notice] 1#1: worker process 190 exited with code 0
+2017/10/31 01:56:51 [notice] 1#1: exit
+2017/10/31 01:56:53 [notice] 1#1: using the "epoll" event method
+2017/10/31 01:56:53 [notice] 1#1: nginx/1.11.1
+2017/10/31 01:56:53 [notice] 1#1: built by gcc 4.9.2 (Debian 4.9.2-10) 
+2017/10/31 01:56:53 [notice] 1#1: OS: Linux 4.9.49-moby
+2017/10/31 01:56:53 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2017/10/31 01:56:53 [notice] 1#1: start worker processes
+2017/10/31 01:56:53 [notice] 1#1: start worker process 5
+2017/10/31 01:56:55 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:56:56 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:56:56 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:56:56 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:56:56 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:56:56 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:56:56 [error] 5#5: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: neblu.feiyu.com, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "neblu.feiyu.com:8080"
+2017/10/31 01:59:05 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+2017/10/31 01:59:05 [notice] 5#5: exiting
+2017/10/31 01:59:05 [notice] 5#5: exit
+2017/10/31 01:59:05 [notice] 1#1: signal 14 (SIGALRM) received
+2017/10/31 01:59:05 [notice] 1#1: signal 17 (SIGCHLD) received
+2017/10/31 01:59:05 [notice] 1#1: worker process 5 exited with code 0
+2017/10/31 01:59:05 [notice] 1#1: exit

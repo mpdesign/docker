@@ -26,7 +26,7 @@ services:
       MYSQL_USER: "test"
       MYSQL_PASSWORD: "123123"
     volumes:
-      - ./mysql/log:/var/mysql/log
+      #- ./mysql/log:/var/mysql/log
       - ./etc/mysql:/etc/mysql
     ports:
       - "3306:3306"
