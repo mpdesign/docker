@@ -34,6 +34,7 @@ RUN apt update && apt install -y libpng12-dev libjpeg-dev libzip-dev \
   && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
   && docker-php-ext-install gd mysqli pdo_mysql zip opcache redis bcmath yaf
 
+COPY ./config/yaf.ini /usr/local/etc/php/conf.d/docker-php-ext-yaf.ini
 
 # 时区
 ENV TZ=Asia/Shanghai

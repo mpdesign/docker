@@ -10,7 +10,7 @@ services:
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
       - /data:/data
   php:
-    image: mp-php:1.0
+    image: mp-php:1.1
     working_dir: /data
     #build:
     #  context: ../services/php
