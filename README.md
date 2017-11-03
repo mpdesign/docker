@@ -25,41 +25,49 @@ docker-mp 是一个用 Docker 搭建的本地 PHP 应用开发与运行环境。
 
 准备：
 
+下载并安装docker客户端
+
 ```
-git clone https://github.com/mpdesign/docker.git
+https://www.docker.com/
+```
+
+获取阿里云加速器，并配置
+
+```
+https://{id}.mirror.aliyuncs.com
+```
+
+获取docker-mp
+
+```
+git clone https://github.com/mpdesign/docker-mp.git
 cd docker
 ```
 
 创建Dockfile镜像：
 
-* nginx
+* mp-nginx
 
 ```
-docker pull nginx:1.12.2 
+docker build -t mp-nginx:1.0 ./services/nginx/ 
 ```
 
-* php-fpm
+* mp-php
 
 ```
-docker pull php:7.1.11-fpm
-```
-
-* php-yaf
-
-```
-docker build -t php-yaf ./services/php/
+docker build -t mp-php:1.0 ./services/php/ 
 ```
 
 * mysql
 
 ```
-docker pull mariadb:10.1
+docker build -t mp-mysql:1.0 ./services/mysql/
 ```
 
 * redis
 
 ```
-docker pull redis:3.2.1
+docker build -t mp-redis:1.0 ./services/redis/ 
 ```
 
 创建docker-compose.yml
@@ -72,14 +80,3 @@ docker pull redis:3.2.1
 docker-compose up -d
 ```
 
-* 进入容器修改php和nginx配置
-
-```
-docker-compose exec 容器名 bash
-```
-
-* 重启
-
-```
-docker-compose restart 容器名
-```
