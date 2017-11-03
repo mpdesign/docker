@@ -1,7 +1,7 @@
 version: '3'
 services:
   nginx:
-    image: nginx:1.12.2
+    image: mp-nginx:1.0
     ports:
       - "80:80"
     depends_on:
@@ -18,8 +18,8 @@ services:
     volumes:
       - ./etc/php:/etc/php
       - /data:/data
-  db:
-    image: mariadb:10.1
+  mysql:
+    image: mp-mysql:1.0
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "test"
@@ -30,8 +30,8 @@ services:
       - ./etc/mysql:/etc/mysql
     ports:
       - "3306:3306"
-  memory:
-    image: redis:3.2.1
+  redis:
+    image: mp-redis:1.0
     ports:
       - "6379:6379"
   analysis:
