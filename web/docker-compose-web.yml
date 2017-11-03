@@ -10,7 +10,7 @@ services:
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
       - /data:/data
   php:
-    image: php-yaf:1.0
+    image: mp-php:1.0
     working_dir: /data
     #build:
     #  context: ../services/php
@@ -18,7 +18,7 @@ services:
     volumes:
       - ./etc/php:/etc/php
       - /data:/data
-  mysql:
+  db:
     image: mariadb:10.1
     environment:
       MYSQL_ROOT_PASSWORD: "root"
@@ -30,7 +30,13 @@ services:
       - ./etc/mysql:/etc/mysql
     ports:
       - "3306:3306"
-  redis:
+  memory:
     image: redis:3.2.1
     ports:
       - "6379:6379"
+  analysis:
+    image: mp-python:1.0
+    command: /bin/sh -c "while true; do echo 1; sleep 3600; done" & 
+    volumes:
+      - /data/analysis:/data/analysis
+      - /data/nebula/gflow:/data/nebula/gflow
