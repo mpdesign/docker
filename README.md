@@ -1,6 +1,6 @@
-# docker-mp
+# mp-docker
 
-docker-mp 是一个用 Docker 搭建的本地 PHP 应用开发与运行环境。
+mp-docker 是一个用 Docker 搭建的本地 PHP 应用开发与运行环境。
 
 ## 准备
 
