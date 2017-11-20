@@ -18,25 +18,43 @@ services:
     volumes:
       - ./etc/php:/etc/php
       - /data:/data
-  mysql:
-    image: mp-mysql:1.0
-    environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "test"
-      MYSQL_USER: "test"
-      MYSQL_PASSWORD: "123123"
-    volumes:
-      #- ./mysql/log:/var/mysql/log
-      - ./etc/mysql:/etc/mysql
-    ports:
-      - "3306:3306"
-  redis:
-    image: mp-redis:1.0
-    ports:
-      - "6379:6379"
-  analysis:
+  master:
     image: mp-python:1.0
-    command: /bin/sh -c "while true; do echo 1; sleep 3600; done" & 
+    command: /bin/sh -c "while true; do echo 1; sleep 3600; done" &
     volumes:
-      - /data/analysis:/data/analysis
-      - /data/nebula/gflow:/data/nebula/gflow
+      - /data:/data
+    networks:
+      default:
+        ipv4_address: 172.18.0.101
+  slave2:
+    image: mp-python:1.0
+    command: /bin/sh -c "while true; do echo 1; sleep 3600; done" &
+    networks:
+      default:
+        ipv4_address: 172.18.0.102
+  slave3:
+    image: mp-python:1.0
+    command: /bin/sh -c "while true; do echo 1; sleep 3600; done" &
+    networks:
+      default:
+        ipv4_address: 172.18.0.103
+#  mysql:
+#    image: mp-mysql:1.0
+#    environment:
+#      MYSQL_ROOT_PASSWORD: "root"
+#      MYSQL_DATABASE: "test"
+#      MYSQL_USER: "test"
+#      MYSQL_PASSWORD: "123123"
+#    volumes:
+#      #- ./mysql/log:/var/mysql/log
+#      - ./etc/mysql:/etc/mysql
+#    ports:
+#      - "3306:3306"
+#  redis:
+#    image: mp-redis:1.0
+#    ports:
+#      - "6379:6379"
+networks:
+  default:
+    external:
+      name: mynetwork 
